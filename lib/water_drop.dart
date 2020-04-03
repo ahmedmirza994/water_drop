@@ -17,11 +17,7 @@ class WaterDropParam {
   ///Height of a water drop
   final double height;
 
-  WaterDropParam(
-      {@required this.top,
-      @required this.left,
-      @required this.width,
-      @required this.height})
+  WaterDropParam({@required this.top, @required this.left, @required this.width, @required this.height})
       : assert(top != null),
         assert(left != null),
         assert(width != null && width > 0),
@@ -44,14 +40,7 @@ class WaterDrop extends StatelessWidget {
         super(key: key);
 
   ///A factory for creating a single drop
-  factory WaterDrop.single(
-          {Key key,
-          double left,
-          double top,
-          double height,
-          double width,
-          Widget child}) =>
-      WaterDrop(
+  factory WaterDrop.single({Key key, double left, double top, double height, double width, Widget child}) => WaterDrop(
         child: child,
         params: [
           WaterDropParam(top: top, left: left, width: width, height: height),
@@ -82,9 +71,7 @@ class _WaterDrop extends StatefulWidget {
   final double height;
   final Widget child;
 
-  const _WaterDrop(
-      {Key key, this.child, this.top, this.width, this.left, this.height})
-      : super(key: key);
+  const _WaterDrop({Key key, this.child, this.top, this.width, this.left, this.height}) : super(key: key);
 
   @override
   __WaterDropState createState() => __WaterDropState();
@@ -120,9 +107,9 @@ class __WaterDropState extends State<_WaterDrop> {
         gradient: LinearGradient(
           begin: alignment - alignmentModifier,
           end: alignment + alignmentModifier,
-          colors: [Colors.black, Colors.white],
+          colors: [Color(0xFF00BAFF), Color(0xFF00BAFF), Color(0xFF00BAFF),Color(0xFF00BAFF)],
         ),
-        backgroundBlendMode: BlendMode.overlay,
+        backgroundBlendMode: BlendMode.darken,
       ),
       child: widget.child,
     );
@@ -204,8 +191,7 @@ class _LightDot extends StatelessWidget {
   final double width;
   final double height;
 
-  const _LightDot({Key key, this.top, this.left, this.width, this.height})
-      : super(key: key);
+  const _LightDot({Key key, this.top, this.left, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -236,8 +222,7 @@ class _OvalShadow extends StatelessWidget {
   final double width;
   final double height;
 
-  const _OvalShadow({Key key, this.top, this.left, this.width, this.height})
-      : super(key: key);
+  const _OvalShadow({Key key, this.top, this.left, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
