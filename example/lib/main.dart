@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: WaterDrop(
           params: [
-            WaterDropParam(top: 6, height: 40, left: 6, width: 60),
+            WaterDropParam(top: 6, height: 10, left: 6, width: 10),
             WaterDropParam(top: 16, height: 30, left: 100, width: 20),
           ],
           child: Container(
@@ -36,10 +36,7 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            MyCard(color: Colors.green),
-            MyCard(color: Colors.yellow),
-            MyCard(color: Theme.of(context).cardColor),
-            MyCard(color: Colors.orange),
+            MyCard(color: Colors.white),
           ],
         ),
       ),
@@ -83,8 +80,8 @@ class _MyCardState extends State<MyCard> with SingleTickerProviderStateMixin {
         return WaterDrop(
           child: child,
           params: [
-            WaterDropParam(top: 50 + move, height: 70, left: 100, width: 50),
-            WaterDropParam(top: 10 + move, height: 100, left: 280, width: 100),
+            WaterDropParam(top: 50 + move, height: 4, left: 100, width: 4),
+            WaterDropParam(top: 10 + move, height: 12, left: 280, width: 12),
             WaterDropParam(top: 155 + move, height: 35, left: 135, width: 35),
             WaterDropParam(top: 135 + move, height: 40, left: 250, width: 30),
             WaterDropParam(top: 20 + move, height: 40, left: 20, width: 40),
